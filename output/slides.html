@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>國泰國小 蘇國瑞主任六年級社會領域公開課分析</title>
+  <style>
+    :root {
+      --bg-color: #F5F5F0;
+      --title-color: #503228;
+      --text-color: #3C3C3C;
+    }
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--bg-color);
+      font-family: 'Microsoft JhengHei', -apple-system, sans-serif;
+      color: var(--text-color);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      overflow: hidden;
+    }
+    .slides-container {
+      position: relative;
+      width: 90vw;
+      max-width: 1200px;
+      height: 70vh;
+      min-height: 500px;
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(10px);
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+    .slide {
+      display: none;
+      flex: 1;
+      padding: 40px;
+      box-sizing: border-box;
+    }
+    .slide.active {
+      display: flex;
+      animation: fadeIn 0.5s ease-in-out forwards;
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .slide-layout {
+      display: flex;
+      width: 100%;
+      height: 100%;
+      gap: 40px;
+      align-items: center;
+    }
+    .slide-text {
+      flex: 1.2;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+    .slide-text h2 {
+      color: var(--title-color);
+      margin-top: 0;
+      margin-bottom: 24px;
+      font-size: 32px;
+      line-height: 1.3;
+      border-left: 5px solid var(--title-color);
+      padding-left: 15px;
+    }
+    .slide-text ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+    .slide-text li {
+      font-size: 20px;
+      line-height: 1.8;
+      margin-bottom: 12px;
+      list-style-type: square;
+    }
+    .slide-image {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
+    }
+    .slide-image img {
+      max-width: 100%;
+      max-height: 90%;
+      border-radius: 12px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      object-fit: cover;
+      aspect-ratio: 1;
+    }
+    .controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 40px;
+      background: rgba(255, 255, 255, 0.4);
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+    }
+    .btn {
+      background: var(--title-color);
+      color: var(--bg-color);
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: opacity 0.2s, transform 0.1s;
+    }
+    .btn:hover {
+      opacity: 0.9;
+    }
+    .btn:active {
+      transform: scale(0.98);
+    }
+    .btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+    }
+    .progress-bar-container {
+      flex: 1;
+      height: 8px;
+      background: rgba(0, 0, 0, 0.05);
+      border-radius: 4px;
+      margin: 0 40px;
+      overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%;
+      background: var(--title-color);
+      width: 0%;
+      transition: width 0.3s ease;
+    }
+    .slide-counter {
+      font-size: 16px;
+      font-weight: bold;
+      color: var(--text-color);
+      min-width: 60px;
+      text-align: right;
+    }
+    @media (max-width: 768px) {
+      .slide-layout {
+        flex-direction: column;
+        overflow-y: auto;
+      }
+      .slide-image {
+        height: auto;
+        margin-top: 20px;
+      }
+      .slide-image img {
+        max-height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="slides-container">
+
+    <section class="slide" id="slide-1">
+      <div class="slide-layout">
+        <div class="slide-text">
+          <h2>國泰國小 蘇國瑞主任六年級社會領域公開課分析</h2>
+          <ul>
+          <li>授課教師：蘇國瑞主任</li>
+          <li>授課主題：國泰校史與地方產業變遷探究</li>
+          <li>課例研究框架：學習共同體「描述-詮釋-反思」</li>
+          </ul>
+        </div>
+        <div class="slide-image">
+          <img src="./images/slide_1.png" alt="Slide 1 Illustration">
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-2">
+      <div class="slide-layout">
+        <div class="slide-text">
+          <h2>課程背景與探究脈絡</h2>
+          <ul>
+          <li>前置學習：學生已完成對姚素蓮前校長與葉錫東校友的專訪</li>
+          <li>學習資源：運用專訪記錄與小組對話進行在地化歷史探究</li>
+          <li>核心問題：從口述歷史探討國泰校史與新莊在地變遷</li>
+          </ul>
+        </div>
+        <div class="slide-image">
+          <img src="./images/slide_2.png" alt="Slide 2 Illustration">
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-3">
+      <div class="slide-layout">
+        <div class="slide-text">
+          <h2>任務一：小白板口述歷史整理 (描述)</h2>
+          <ul>
+          <li>教師提問：寫下姚素蓮校長訪談中印象最深的三件事</li>
+          <li>學生行為：小組成員在小白板上獨立撰寫個人印象</li>
+          <li>協同聆聽：以順時針方向輪流口頭分享個人記錄</li>
+          </ul>
+        </div>
+        <div class="slide-image">
+          <img src="./images/slide_3.png" alt="Slide 3 Illustration">
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-4">
+      <div class="slide-layout">
+        <div class="slide-text">
+          <h2>校地變遷與廢校危機 (詮釋)</h2>
+          <ul>
+          <li>學生洞察：發現國泰國小曾因學生數銳減面臨併校/廢校危機</li>
+          <li>歷史事實：學校曾有高達五千多名學生的輝煌歷史</li>
+          <li>校地重組：校舍從西盛遷移至中正路現址的歷史脈絡</li>
+          </ul>
+        </div>
+        <div class="slide-image">
+          <img src="./images/slide_4.png" alt="Slide 4 Illustration">
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-5">
+      <div class="slide-layout">
+        <div class="slide-text">
+          <h2>校舍演變與空間記憶 (詮釋)</h2>
+          <ul>
+          <li>空間改建：和平樓、愛國樓、信義樓等校舍的拆建演變</li>
+          <li>交通演變：公車曾可直達舊校門口，映照昔日便利交通</li>
+          <li>空間重組：從學生口述中重建學校建築與在地空間的連結</li>
+          </ul>
+        </div>
+        <div class="slide-image">
+          <img src="./images/slide_5.png" alt="Slide 5 Illustration">
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-6">
+      <div class="slide-layout">
+        <div class="slide-text">
+          <h2>聆聽關係與小組共識建立 (反思)</h2>
+          <ul>
+          <li>學習共同體：教師引導學生「耳朵打開」聆聽他人分享</li>
+          <li>共識形成：組內對話尋找最獨特的校史記憶並張貼小白板</li>
+          <li>教學啟示：小白板作為思考外顯化的媒介，促進微觀交流</li>
+          </ul>
+        </div>
+        <div class="slide-image">
+          <img src="./images/slide_6.png" alt="Slide 6 Illustration">
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-7">
+      <div class="slide-layout">
+        <div class="slide-text">
+          <h2>任務二：地方產業與個人生命史 (描述)</h2>
+          <ul>
+          <li>教師提問：寫下葉錫東校友訪談中印象最深的三件事</li>
+          <li>學生行為：整理校友生命故事，並與新莊在地產業連結</li>
+          <li>協同學習：小組討論鐵路、工廠對在地生活的深遠影響</li>
+          </ul>
+        </div>
+        <div class="slide-image">
+          <img src="./images/slide_7.png" alt="Slide 7 Illustration">
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-8">
+      <div class="slide-layout">
+        <div class="slide-text">
+          <h2>溫仔圳的歷史與環境限制 (詮釋)</h2>
+          <ul>
+          <li>政策限制：溫仔圳過去被列為「洪水平原管制區」因而禁建</li>
+          <li>景觀演變：由於禁建限制，當地發展出密集的鐵皮屋工廠</li>
+          <li>環境衝擊：鐵皮屋工廠的林立導致周邊環境的破壞與變遷</li>
+          </ul>
+        </div>
+        <div class="slide-image">
+          <img src="./images/slide_8.png" alt="Slide 8 Illustration">
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-9">
+      <div class="slide-layout">
+        <div class="slide-text">
+          <h2>個人敘事與產業風險的連結 (詮釋)</h2>
+          <ul>
+          <li>個人故事：葉錫東校友童年手部被機器夾傷的家庭記憶</li>
+          <li>產業風險：製冰廠的粉塵危害與工人的職業安全問題</li>
+          <li>在地企業：新莊曾是黑人牙膏等著名工廠的聚集地</li>
+          </ul>
+        </div>
+        <div class="slide-image">
+          <img src="./images/slide_9.png" alt="Slide 9 Illustration">
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-10">
+      <div class="slide-layout">
+        <div class="slide-text">
+          <h2>聆聽他人與向他人學習 (反思)</h2>
+          <ul>
+          <li>對話式教學：教師提醒「一定要把耳朵打開，向他人學習」</li>
+          <li>學習跳躍：學生能將校友個人故事，提煉為社會結構的理解</li>
+          <li>教學引導：教師適時穿針引線，將學生的片斷發表織成網</li>
+          </ul>
+        </div>
+        <div class="slide-image">
+          <img src="./images/slide_10.png" alt="Slide 10 Illustration">
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-11">
+      <div class="slide-layout">
+        <div class="slide-text">
+          <h2>本堂公開課的協同學習特徵 (反思)</h2>
+          <ul>
+          <li>學習共同體實踐：從小組討論到全班分享的雙料對話</li>
+          <li>聆聽關係的穿透：學生不僅發表，更在聆聽中修正觀點</li>
+          <li>在地文化認同：透過校史與地方史探究，深化主體意識</li>
+          </ul>
+        </div>
+        <div class="slide-image">
+          <img src="./images/slide_11.png" alt="Slide 11 Illustration">
+        </div>
+      </div>
+    </section>
+
+    <section class="slide" id="slide-12">
+      <div class="slide-layout">
+        <div class="slide-text">
+          <h2>總結與教學建議 (展望)</h2>
+          <ul>
+          <li>總結：成功的社會領域學習共同體課例探究範例</li>
+          <li>建議一：可在小組分享後加入更具挑戰性的「伸展跳躍」問題</li>
+          <li>建議二：引導學生思考未來溫仔圳重劃對國泰國小的影響</li>
+          </ul>
+        </div>
+        <div class="slide-image">
+          <img src="./images/slide_12.png" alt="Slide 12 Illustration">
+        </div>
+      </div>
+    </section>
+    
+    <!-- Navigation Controls -->
+    <div class="controls">
+      <button class="btn" id="prev-btn" onclick="changeSlide(-1)">上一頁</button>
+      <div class="progress-bar-container">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+      <button class="btn" id="next-btn" onclick="changeSlide(1)">下一頁</button>
+      <span class="slide-counter" id="slide-counter">1 / 12</span>
+    </div>
+  </div>
+
+  <script>
+    let currentSlideIndex = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const progressBar = document.getElementById('progress-bar');
+    const slideCounter = document.getElementById('slide-counter');
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      
+      currentSlideIndex = index;
+      
+      // Update buttons
+      prevBtn.disabled = index === 0;
+      nextBtn.disabled = index === totalSlides - 1;
+      
+      // Update progress bar
+      const progressPercent = ((index + 1) / totalSlides) * 100;
+      progressBar.style.width = `${progressPercent}%`;
+      
+      // Update counter
+      slideCounter.innerText = `${index + 1} / ${totalSlides}`;
+    }
+
+    function changeSlide(direction) {
+      let targetIndex = currentSlideIndex + direction;
+      if (targetIndex >= 0 && targetIndex < totalSlides) {
+        showSlide(targetIndex);
+      }
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        changeSlide(1);
+      } else if (e.key === 'ArrowLeft') {
+        changeSlide(-1);
+      }
+    });
+
+    // Initialize first slide
+    showSlide(0);
+  </script>
+</body>
+</html>
