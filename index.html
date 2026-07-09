@@ -165,11 +165,22 @@
       .slide {
         padding: 20px;
         overflow-y: auto;
+        min-height: 0;
       }
       .slide-layout {
         flex-direction: column;
         gap: 20px;
         align-items: flex-start;
+        height: auto;
+      }
+      .slide-text {
+        flex: none;
+        width: 100%;
+      }
+      .slide-image {
+        flex: none;
+        width: 100%;
+        height: auto;
       }
       .slide-text h2 {
         font-size: 22px;
